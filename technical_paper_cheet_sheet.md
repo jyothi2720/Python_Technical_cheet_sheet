@@ -120,21 +120,31 @@ car1.start()   # Output: Tesla car started!
 
 from abc import ABC, abstractmethod
 
-class Animal(ABC):
+class Animal(ABC):                          # Abstract Base Class
+    def __init__(self, name):
+        self._name = name                   # Encapsulation (protected attribute)
+    
     @abstractmethod
-    def sound(self):
+    def sound(self):                        # Abstract method - must be implemented
         pass
 
-class Dog(Animal):
-    def sound(self):
+    def get_name(self):                     # Getter method
+        return self._name
+
+class Dog(Animal):                          # Inherits from Animal
+    def sound(self):                        # Implements abstract method
         return "Bark"
 
-class Cat(Animal):
-    def sound(self):
+class Cat(Animal):                          # Inherits from Animal
+    def sound(self):                        # Implements abstract method
         return "Meow"
 
-for animal in [Dog(), Cat()]:
-    print(animal.sound())  # Output: Bark  Meow
+# Polymorphism in action
+for animal in [Dog("Buddy"), Cat("Kitty")]:
+    print(f"{animal.get_name()} says {animal.sound()}")  
+    # Output:
+    # Buddy says Bark
+    # Kitty says Meow
 
 ```
 
