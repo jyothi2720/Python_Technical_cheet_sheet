@@ -257,13 +257,9 @@ app.start()  # Output: Connected to MySQL
 ```
 
 ## References
-```
-• Programiz Python Guide: https://www.programiz.com/python-programming
-```
 
-```
+• Programiz Python Guide: https://www.programiz.com/python-programming
 • W3Schools Python Reference: https://www.w3schools.com/python/
-```
 • Python Array Tutorial: https://www.youtube.com/watch?v=nlP5kF1_efE
 • Python Array(List) Methods Tutorial: https://www.youtube.com/watch?v=phRshQSU-xA&t;=607s
 • Python Strings Tutorial: https://www.youtube.com/watch?v=Ctqi5Y4X-jA
