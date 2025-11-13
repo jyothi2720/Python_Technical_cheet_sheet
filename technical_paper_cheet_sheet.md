@@ -4,8 +4,9 @@
 
 1. Array (List) Methods
 2. String Methods
-3. Objects and Object-Oriented Programming (OOP)
-4. SOLID Principles in Python
+3. Dictionary Methods
+4. Objects and Object-Oriented Programming (OOP)
+5. SOLID Principles in Python
 
 ## Introduction
 
@@ -72,7 +73,41 @@ clean = text.strip().upper().replace(" ", "_")
 print(clean)  # Output: PYTHON_PROGRAMMING
 ```
 
-## 3. Objects and Object-Oriented Programming (OOP)
+## 3. Dictionary Methods
+
+Dictionaries in Python are unordered collections of key-value pairs.
+They are mutable, meaning you can add, change, or remove items after creation.
+Dictionaries are commonly used for fast lookups and data mapping.
+
+| **Method**                 | **Description**                                      | **Example**                                         |
+| -------------------------- | ---------------------------------------------------- | --------------------------------------------------- |
+| `keys()`                   | Returns all keys in the dictionary                   | `my_dict.keys()` → `dict_keys(['a', 'b', 'c'])`     |
+| `values()`                 | Returns all values in the dictionary                 | `my_dict.values()` → `dict_values([1, 2, 3])`       |
+| `items()`                  | Returns key-value pairs as tuples                    | `my_dict.items()` → `dict_items([('a',1),('b',2)])` |
+| `get(key, default)`        | Returns value for key, or default if not found       | `my_dict.get('a', 0)` → `1`                         |
+| `update(other_dict)`       | Updates dictionary with key/value pairs from another | `my_dict.update({'d':4})`                           |
+| `pop(key)`                 | Removes item with specified key and returns value    | `my_dict.pop('a')` → removes `'a'`                  |
+| `popitem()`                | Removes and returns last inserted key-value pair     | `my_dict.popitem()`                                 |
+| `clear()`                  | Removes all items from dictionary                    | `my_dict.clear()`                                   |
+| `copy()`                   | Returns a shallow copy of the dictionary             | `new_dict = my_dict.copy()`                         |
+| `fromkeys(keys, value)`    | Creates dictionary from keys with same value         | `dict.fromkeys(['a','b'], 0)` → `{'a':0, 'b':0}`    |
+| `setdefault(key, default)` | Returns value of key; if not present, adds it        | `my_dict.setdefault('x', 10)`                       |
+
+#### Example:
+``` python
+student = {'name': 'Alice', 'age': 20, 'grade': 'A'}
+
+# Access and modify
+student.update({'age': 21})
+student['city'] = 'London'
+
+print(student.keys())       # dict_keys(['name', 'age', 'grade', 'city'])
+print(student.get('grade')) # A
+print(student)
+# Output: {'name': 'Alice', 'age': 21, 'grade': 'A', 'city': 'London'}
+```
+
+## 4. Objects and Object-Oriented Programming (OOP)
 
 ### What are Objects?
 In Python, **everything is an object** — numbers, strings, lists, functions, and even classes.  
@@ -148,11 +183,11 @@ for animal in [Dog("Buddy"), Cat("Kitty")]:
 
 ```
 
-## 4. SOLID Principles in Python
+## 5. SOLID Principles in Python
 
 The SOLID principles are design guidelines that help developers build maintainable, scalable, and robust object-oriented software.
 
-### 4.1 Single Responsibility Principle (SRP)
+### 5.1 Single Responsibility Principle (SRP)
 
 The **Single Responsibility Principle (SRP)** states that a class should have **only one reason to change** —  
 each class should handle **only one responsibility**.
@@ -178,7 +213,7 @@ class FileSaver:
         pass
 ```
 
-### 4.2 Open/Closed Principle (OCP)
+### 5.2 Open/Closed Principle (OCP)
 
 Classes should be open for extension but closed for modification.
 
@@ -202,7 +237,7 @@ class Square(Shape):
         return self.side ** 2
 ```
 
-### 4.3 Liskov Substitution Principle (LSP)
+### 5.3 Liskov Substitution Principle (LSP)
 Subclasses should be replaceable with their base classes without breaking the code.
 
 #### Example:
@@ -219,7 +254,7 @@ def make_it_fly(bird: Bird):
 
 make_it_fly(Sparrow()) 
 ```
-### 4.4 Interface Segregation Principle (ISP)
+### 5.4 Interface Segregation Principle (ISP)
 
 No Clients should not be forced to depend on methods they don’t use. Splits large interfaces into specific ones.
 
@@ -237,7 +272,7 @@ class Scanner(ABC):
     def scan_doc(self):
         pass
 ```
-### 4.5 Dependency Inversion Principle (DIP)
+### 5.5 Dependency Inversion Principle (DIP)
 
 Depend on **abstractions**, not on **concrete implementations**.  
 High-level modules should not depend on low-level modules.  
@@ -274,5 +309,6 @@ app.start()  # Output: Connected to MySQL
 • Python Array(List) Methods Tutorial: https://www.youtube.com/watch?v=phRshQSU-xA&t;=607s
 • Python Strings Tutorial: https://www.youtube.com/watch?v=Ctqi5Y4X-jA
 • Python String Methods Tutorial: https://www.youtube.com/watch?v=ANgYwq9fFQw
+• Python Dictionaries Tutorial: https://www.youtube.com/watch?v=C29qMZb9HrA
 • Python OOPS Tutorial: https://www.youtube.com/watch?v=qiSCMNBIP2g
 • Python Solid Principies Tutorial: https://www.youtube.com/watch?v=pTB30aXS77U&t=50s , https://www.youtube.com/watch?v=B87DCLmrtT8
